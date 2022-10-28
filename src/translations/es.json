@@ -1,0 +1,13 @@
+{
+  "7th_company": "La 7ème Compagnie",
+  "languages": {
+    "en": "Inglés",
+    "fr": "Francés",
+    "es": "Español"
+  },
+  "login_page": {
+    "welcome_soldier": "¡Bienvenido soldado!",
+    "please_login": "Por favor, conéctese a través de Discord para acceder al OrBat.",
+    "login": "Se conecta"
+  }
+}

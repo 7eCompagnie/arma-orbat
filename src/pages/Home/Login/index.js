@@ -15,9 +15,14 @@ import {
     Logo,
     Right,
     StyledTitle,
-    SubTitle
+    SubTitle,
+    Footer
 } from "./style";
 import {signIn} from "../../../services/users";
+import '../../../translations/resources';
+import {t} from "i18next";
+import {Trans, withNamespaces} from "react-i18next";
+import {LanguagePicker} from "../../../components/LanguagePicker";
 
 const Login = () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -87,12 +92,23 @@ const Login = () => {
         <Container>
             <Left style={{background: theme.colors.dark[6]}}>
                 <Logo src={logo} />
-                <StyledTitle>La 7ème Compagnie</StyledTitle>
-                <SubTitle order={2} style={{color: theme.colors.gray[5]}}>Bienvenue soldat !<br/> Veuillez vous connectez via Discord pour accèder à l'OrBat.</SubTitle>
-                <Button size="lg" onClick={() => openLoginWindow()}>Se connecter</Button>
+                <StyledTitle>
+                    {t('7th_company')}
+                </StyledTitle>
+                <SubTitle order={2} style={{color: theme.colors.gray[5]}}>
+                    {t('login_page.welcome_soldier')}<br/>
+                    {t('login_page.please_login')}
+                </SubTitle>
+                <Button size="lg" onClick={() => openLoginWindow()}>
+                    {t('login_page.login')}
+                </Button>
+
+                <Footer>
+                    <LanguagePicker />
+                </Footer>
             </Left>
             <Right>
-                <Carousel style={{width: '100%'}} orientation="vertical" withControls={false} slideGap="0" height="100%" width="100vw" withIndicators loop plugins={[autoplay.current]}>
+                <Carousel style={{width: '100%'}} orientation="vertical" withControls={false} slideGap="0" height="100%" width="100%" withIndicators loop plugins={[autoplay.current]}>
                     {images.map((image, index) => (
                         <CarouselSlide key={index} style={{backgroundImage: `url(${image.url})`}}>
                             <Description>
@@ -107,4 +123,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default withNamespaces()(Login);
