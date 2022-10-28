@@ -1,9 +1,16 @@
 {
   "7th_company": "La 7ème Compagnie",
+  "dark_mode": "Mode sombre",
+  "notifications": "Notifications",
   "languages": {
     "en": "Anglais",
     "fr": "Français",
     "es": "Espagnol"
+  },
+  "roles": {
+    "administrator": "Administrateur",
+    "user": "Soldat",
+    "visitor": "Visiteur"
   },
   "login_page": {
     "welcome_soldier": "Bienvenue soldat !",

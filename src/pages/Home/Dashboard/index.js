@@ -1,10 +1,29 @@
 import React, {useState} from "react";
-import {AppShell, Burger, Footer, Header, MediaQuery, Navbar, Text, useMantineTheme} from "@mantine/core";
+import {
+    ActionIcon,
+    AppShell,
+    Burger,
+    Header,
+    MediaQuery,
+    Navbar,
+    Text,
+    Tooltip,
+    useMantineColorScheme,
+    useMantineTheme
+} from "@mantine/core";
+import {Bell, Moon, Sun} from "tabler-icons-react";
 import {Route, Routes} from "react-router-dom";
+import {t} from "i18next";
+import {Container, Left, Logo, Right, Title} from "./style";
+import logo from '../../../assets/images/logo.webp';
+import {LanguagePicker} from "../../../components/LanguagePicker";
+import UserBoxNavbar from "../../../components/UserBoxNavbar";
 
 const Dashboard = () => {
     const theme = useMantineTheme();
     const [opened, setOpened] = useState(false);
+    const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+    const dark = colorScheme === 'dark';
 
     return (
         <AppShell
@@ -17,13 +36,17 @@ const Dashboard = () => {
             asideOffsetBreakpoint="sm"
             navbar={
                 <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
-                    <Text>Application navbar</Text>
+                    <Navbar.Section mt="xs">
+                        {/*<Brand />*/}
+                    </Navbar.Section>
+                    <Navbar.Section grow mt="md">
+                        {/*<MainLinks />*/}
+                    </Navbar.Section>
+                    <Navbar.Section>
+                        {/*<User />*/}
+                    </Navbar.Section>
+                    <UserBoxNavbar />
                 </Navbar>
-            }
-            footer={
-                <Footer height={60} p="md">
-                    Application footer
-                </Footer>
             }
             header={
                 <Header height={70} p="md">
@@ -38,13 +61,40 @@ const Dashboard = () => {
                             />
                         </MediaQuery>
 
-                        <Text>Application header</Text>
+                        <Container>
+                            <Left>
+                                <Logo src={logo} alt="Logo de la 7ème Compagnie" />
+                                <Title style={{color: dark ? theme.colors.gray[4] : theme.colors.dark[9]}}>{t('7th_company')}</Title>
+                            </Left>
+                            <Right>
+                                <LanguagePicker small style={{marginRight: '1rem'}}/>
+                                <Tooltip
+                                    label={t('notifications')}
+                                    position="bottom"
+                                    withArrow
+                                >
+                                    <ActionIcon size="lg" radius="xl" style={{marginRight: '1rem'}}>
+                                        <Bell />
+                                    </ActionIcon>
+                                </Tooltip>
+                                <Tooltip
+                                    label={t('dark_mode')}
+                                    position="bottom-end"
+                                    withArrow
+                                    placement="end"
+                                >
+                                    <ActionIcon size="lg" radius="xl" onClick={() => toggleColorScheme()}>
+                                        {dark ? <Sun /> : <Moon />}
+                                    </ActionIcon>
+                                </Tooltip>
+                            </Right>
+                        </Container>
                     </div>
                 </Header>
             }
         >
             <Routes>
-                <Route index element={<Text>Application header</Text>} />
+                <Route index element={<Text>Application Home</Text>} />
                 <Route path="*" element={<h1>Not found</h1>} />
             </Routes>
         </AppShell>

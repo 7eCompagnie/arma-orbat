@@ -2,7 +2,7 @@ import {createStyles} from "@mantine/core";
 
 export const useStyles = createStyles((theme, { opened }) => ({
 	control: {
-		width: 200,
+		width: 150,
 		display: 'flex',
 		justifyContent: 'space-between',
 		alignItems: 'center',

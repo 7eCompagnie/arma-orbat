@@ -5,6 +5,11 @@
     "fr": "Francés",
     "es": "Español"
   },
+  "roles": {
+    "administrator": "Director",
+    "user": "Soldado",
+    "visitor": "Visitante"
+  },
   "login_page": {
     "welcome_soldier": "¡Bienvenido soldado!",
     "please_login": "Por favor, conéctese a través de Discord para acceder al OrBat.",

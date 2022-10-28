@@ -11,17 +11,17 @@ import {
     Description,
     DescriptionText,
     DescriptionTitle,
+    Footer,
     Left,
     Logo,
     Right,
     StyledTitle,
-    SubTitle,
-    Footer
+    SubTitle
 } from "./style";
 import {signIn} from "../../../services/users";
 import '../../../translations/resources';
 import {t} from "i18next";
-import {Trans, withNamespaces} from "react-i18next";
+import {withNamespaces} from "react-i18next";
 import {LanguagePicker} from "../../../components/LanguagePicker";
 
 const Login = () => {

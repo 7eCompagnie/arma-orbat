@@ -5,7 +5,7 @@ import {languages as data} from '../../data/languages'
 import i18n, {t} from "i18next";
 import {useStyles} from './styles';
 
-export function LanguagePicker() {
+export function LanguagePicker({style}) {
     const [opened, setOpened] = useState(false);
     const { classes } = useStyles({ opened });
     const [selected, setSelected] = useState(data[0]);
@@ -29,8 +29,7 @@ export function LanguagePicker() {
             setSelected(data[2]);
         else
             setSelected(data[0]);
-    });
-
+    }, []);
 
     return (
         <Menu
@@ -39,7 +38,7 @@ export function LanguagePicker() {
             radius="md"
             width="target"
         >
-            <Menu.Target>
+            <Menu.Target style={style}>
                 <UnstyledButton className={classes.control}>
                     <Group spacing="xs">
                         <Image src={selected.image} width={22} height={22} />
