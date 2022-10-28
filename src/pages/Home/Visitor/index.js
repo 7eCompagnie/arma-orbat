@@ -56,7 +56,7 @@ export const Visitor = () => {
 					<Title order={2} mb="2rem" color={theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[9]}>
 						{t('home.visitor.timeline.title')}
 					</Title>
-					<Timeline active={hasJoinedDiscord ? 2 : 1} bulletSize={34} lineWidth={2}>
+					<Timeline active={hasJoinedDiscord ? 1 : 0} bulletSize={34} lineWidth={2}>
 						<Timeline.Item bullet={<Login size={22} />} title={t('home.visitor.timeline.steps.0.title')}>
 							<Text color="dimmed" size="sm">{t('home.visitor.timeline.steps.0.description')}</Text>
 						</Timeline.Item>
