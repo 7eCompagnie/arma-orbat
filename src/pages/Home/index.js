@@ -7,6 +7,9 @@ const Home = () => {
     const user = useContext(UserContext);
     const token = localStorage.getItem('token')
 
+    if (token === "undefined")
+        localStorage.removeItem('token')
+
     if (!user && token)
         return <h1>Loading...</h1>
     else if (!user && !token)

@@ -8,7 +8,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-      <MantineProvider theme={{ colorScheme: 'light' }}>
+      <MantineProvider theme={{
+          colorScheme: 'light',
+          fontFamily: 'Raleway, sans-serif',
+          headings: {
+              fontFamily: 'Monserrat, sans-serif',
+          },
+      }}>
         <App />
       </MantineProvider>
   </React.StrictMode>
