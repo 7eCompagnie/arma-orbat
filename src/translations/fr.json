@@ -3,6 +3,9 @@
   "dark_mode": "Mode sombre",
   "light_mode": "Mode clair",
   "notifications": "Notifications",
+  "first_class": "Première classe",
+  "soldiers": "Soldats",
+  "operations": "Opérations",
   "languages": {
     "en": "Anglais",
     "fr": "Français",
@@ -28,6 +31,40 @@
       "dashboard": "Tableau de bord",
       "play": "Prochaines opérations",
       "trainings": "Se former"
+    }
+  },
+  "home": {
+    "visitor": {
+      "global": {
+        "title": "Bienvenue soldat !",
+        "about_to_join": "vous êtes sur le point de rejoindre la 7ème Compagnie.",
+        "explanation": "Vous allez devoir passer par plusieurs étapes avant de pouvoir être déployé sur nos opérations. Vous allez devoir vous surpasser et prouver que vous êtes digne de porter nos couleurs."
+      },
+      "stats": {
+        "title": "La 7E en quelques chiffres"
+      },
+      "timeline": {
+        "title": "Le parcours d'un soldat",
+        "steps": [
+          {
+            "title": "Se connecter",
+            "description": "Première étape: se connecter à l'OrBat. Si vous lisez ceci, c'est que vous avez réussi !"
+          },
+          {
+            "title": "Rejoindre notre Discord",
+            "description": "Rejoignez-nous sur notre serveur Discord",
+            "here": "ici"
+          },
+          {
+            "title": "Passer sa formation initiale",
+            "description": "Maintenant, vous devez passer votre formation initiale afin de devenir un soldat."
+          },
+          {
+            "title": "Être déployé",
+            "description": "Si vous validez votre formation initiale, vous aurez l'occasion d'être déployé dans nos nombreuses missions. Bonne chance soldat !"
+          }
+        ]
+      }
     }
   }
 }

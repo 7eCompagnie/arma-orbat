@@ -3,6 +3,9 @@
   "dark_mode": "Dark mode",
   "light_mode": "Light mode",
   "notifications": "Notifications",
+  "first_class": "1st class",
+  "soldiers": "Soldiers",
+  "operations": "Operations",
   "languages": {
     "en": "English",
     "fr": "French",
@@ -28,6 +31,40 @@
       "dashboard": "Dashboard",
       "play": "Upcoming operations",
       "trainings": "Get trained"
+    }
+  },
+  "home": {
+    "visitor": {
+      "global": {
+        "title": "Welcome soldier!",
+        "about_to_join": "you are about to join the 7th Company.",
+        "explanation": "You are going to have to go through several steps before you can be deployed on our operations. You are going to have to go above and beyond and prove that you are worthy of wearing our colors."
+      },
+      "stats": {
+        "title": "7E by the numbers"
+      },
+      "timeline": {
+        "title": "A soldier's journey",
+        "steps": [
+          {
+            "title": "Getting connected",
+            "description": "Step one: log in to OrBat. If you're reading this, you've made it!"
+            },
+          {
+            "title": "Join our Discord",
+            "description": "Join us on our Discord server",
+            "here": "here"
+          },
+          {
+            "title": "Pass your initial training",
+            "description": "Now you must pass your initial training in order to become a soldier."
+          },
+          {
+            "title": "Be deployed",
+            "description": "If you pass your initial training, you will have the opportunity to be deployed in our many missions. Good luck soldier!"
+          }
+        ]
+      }
     }
   }
 }

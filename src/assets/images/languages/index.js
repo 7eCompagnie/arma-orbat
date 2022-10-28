@@ -2,8 +2,10 @@ import english from './english.webp';
 import french from './french.webp';
 import spanish from './spanish.webp';
 
-export default {
+const images = {
     english: english,
     french: french,
     spanish: spanish
 };
+
+export default images;

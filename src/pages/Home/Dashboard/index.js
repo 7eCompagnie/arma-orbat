@@ -19,6 +19,8 @@ import logo from '../../../assets/images/logo.webp';
 import {LanguagePicker} from "../../../components/LanguagePicker";
 import UserBoxNavbar from "../../../components/UserBoxNavbar";
 import NavbarLinks from "../../../components/NavbarLinks";
+import user from "../../../context/User";
+import Visitor from "../Visitor";
 
 const Dashboard = () => {
     const theme = useMantineTheme();
@@ -116,7 +118,9 @@ const Dashboard = () => {
             }
         >
             <Routes>
-                <Route index element={<Text>Application Home</Text>} />
+                <Route index element={
+                    user.role === "VISITOR" ? <Text>Dashboard</Text> : <Visitor/>
+                } />
                 <Route path="*" element={<h1>Not found</h1>} />
             </Routes>
         </AppShell>
