@@ -15,7 +15,7 @@ function App() {
     }
 
     useEffect(() => {
-        if (token) {
+        if (token != null) {
             fetch('http://localhost:4000/users/token', {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`

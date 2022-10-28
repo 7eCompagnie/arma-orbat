@@ -78,7 +78,7 @@ const Dashboard = () => {
                                     </ActionIcon>
                                 </Tooltip>
                                 <Tooltip
-                                    label={t('dark_mode')}
+                                    label={dark ? t('light_mode') : t('dark_mode')}
                                     position="bottom-end"
                                     withArrow
                                     placement="end"

@@ -1,5 +1,8 @@
 {
   "7th_company": "La 7ème Compagnie",
+  "dark_mode": "Dark mode",
+  "light_mode": "Light mode",
+  "notifications": "Notifications",
   "languages": {
     "en": "English",
     "fr": "French",

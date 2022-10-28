@@ -76,8 +76,6 @@ const Login = () => {
                     window.opener.location.reload();
                     window.close();
                 }
-
-                navigate('/')
             }).catch(e => {
                 console.error(e)
             })

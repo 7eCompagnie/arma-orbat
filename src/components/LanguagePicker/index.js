@@ -33,6 +33,7 @@ export function LanguagePicker({style}) {
 
     return (
         <Menu
+            withArrow
             onOpen={() => setOpened(true)}
             onClose={() => setOpened(false)}
             radius="md"
