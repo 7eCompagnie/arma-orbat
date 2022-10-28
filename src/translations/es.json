@@ -1,5 +1,8 @@
 {
   "7th_company": "La 7ème Compagnie",
+  "dark_mode": "Modo oscuro",
+  "light_mode": "Modo luz",
+  "notifications": "Notificaciones",
   "languages": {
     "en": "Inglés",
     "fr": "Francés",
@@ -14,5 +17,17 @@
     "welcome_soldier": "¡Bienvenido soldado!",
     "please_login": "Por favor, conéctese a través de Discord para acceder al OrBat.",
     "login": "Se conecta"
+  },
+  "navbar": {
+    "user": {
+      "logout": "Cierre de sesión",
+      "profile": "Mi perfil",
+      "settings": "Ajustes"
+    },
+    "links": {
+      "dashboard": "Tablero de mandos",
+      "play": "Próximas operaciones",
+      "trainings": "Formarse"
+    }
   }
 }

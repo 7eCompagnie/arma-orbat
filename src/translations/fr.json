@@ -23,6 +23,11 @@
       "logout": "Se déconnecter",
       "profile": "Mon profil",
       "settings": "Paramètres"
+    },
+    "links": {
+      "dashboard": "Tableau de bord",
+      "play": "Prochaines opérations",
+      "trainings": "Se former"
     }
   }
 }

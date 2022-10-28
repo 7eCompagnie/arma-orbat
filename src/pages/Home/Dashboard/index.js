@@ -18,6 +18,7 @@ import {Container, Left, Logo, Right, Title} from "./style";
 import logo from '../../../assets/images/logo.webp';
 import {LanguagePicker} from "../../../components/LanguagePicker";
 import UserBoxNavbar from "../../../components/UserBoxNavbar";
+import NavbarLinks from "../../../components/NavbarLinks";
 
 const Dashboard = () => {
     const theme = useMantineTheme();
@@ -35,17 +36,38 @@ const Dashboard = () => {
             navbarOffsetBreakpoint="sm"
             asideOffsetBreakpoint="sm"
             navbar={
-                <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
-                    <Navbar.Section mt="xs">
-                        {/*<Brand />*/}
+                <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 300 }}>
+                    <Navbar.Section grow>
+                        <NavbarLinks/>
                     </Navbar.Section>
-                    <Navbar.Section grow mt="md">
-                        {/*<MainLinks />*/}
-                    </Navbar.Section>
+                    <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+                        <Navbar.Section>
+                            <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1rem'}}>
+                                <LanguagePicker small style={{marginRight: '1rem'}}/>
+                                <Tooltip
+                                    label={t('notifications')}
+                                    position="bottom"
+                                    withArrow
+                                >
+                                    <ActionIcon size="lg" radius="xl" style={{marginRight: '1rem'}}>
+                                        <Bell />
+                                    </ActionIcon>
+                                </Tooltip>
+                                <Tooltip
+                                    label={dark ? t('light_mode') : t('dark_mode')}
+                                    position="bottom"
+                                    withArrow
+                                >
+                                    <ActionIcon size="lg" radius="xl" onClick={() => toggleColorScheme()}>
+                                        {dark ? <Sun /> : <Moon />}
+                                    </ActionIcon>
+                                </Tooltip>
+                            </div>
+                        </Navbar.Section>
+                    </MediaQuery>
                     <Navbar.Section>
-                        {/*<User />*/}
+                        <UserBoxNavbar />
                     </Navbar.Section>
-                    <UserBoxNavbar />
                 </Navbar>
             }
             header={

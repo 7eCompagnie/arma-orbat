@@ -1,5 +1,5 @@
 export const roles = {
-	"administrator": {
+	"admin": {
 		"display": "roles.administrator"
 	},
 	"user": {
@@ -8,4 +8,12 @@ export const roles = {
 	"visitor": {
 		"display": "roles.visitor"
 	}
+}
+
+export const isGranted = (user, role) => {
+	if (user.role === role)
+		return true;
+	else if (user.role === "USER" && role === "VISITOR")
+		return true;
+	return user.role === 'ADMIN';
 }

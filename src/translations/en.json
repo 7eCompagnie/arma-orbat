@@ -17,5 +17,17 @@
     "welcome_soldier": "Welcome soldier!",
     "please_login": "Please log in via Discord to access the OrBat.",
     "login": "Login"
+  },
+  "navbar": {
+    "user": {
+      "logout": "Logout",
+      "profile": "My profile",
+      "settings": "Settings"
+    },
+    "links": {
+      "dashboard": "Dashboard",
+      "play": "Upcoming operations",
+      "trainings": "Get trained"
+    }
   }
 }
