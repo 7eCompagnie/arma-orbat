@@ -9,6 +9,12 @@
   "campaigns": "Campagnes",
   "trainers": "Formateurs",
   "trainings": "Formations",
+  "vote": "Vote",
+  "votes": "Votes",
+  "click": "Clic",
+  "clicks": "Clics",
+  "days_left": "Jours restants",
+  "day_left": "Jour restant",
   "languages": {
     "en": "Anglais",
     "fr": "Français",
@@ -91,5 +97,22 @@
     "title": "Il n'y a rien à voir ici",
     "description": "La page que vous essayez d'ouvrir n'existe pas. Vous avez peut-être fait une erreur de frappe dans l'adresse, ou la page a été déplacée vers une autre URL. Si vous pensez qu'il s'agit d'une erreur, contactez-nous sur Discord.",
     "back_to_home": "Retourner à la page d'accueil"
+  },
+  "top_serveurs": {
+    "vote": {
+      "done_title": "Vote effectué !",
+      "done": "Apparemment, vous avez déjà voté pour le serveur durant les deux dernières heures. Vous pouvez néanmoins vérifier que votre vote a bien été pris en compte en cliquant sur le bouton ci-dessous.",
+      "available_title": "Vous pouvez voter !",
+      "available": "D'après nos informations, vous n'avez pas voté pour le serveur durant les deux dernières heures. Vous pouvez voter en cliquant sur le bouton ci-dessous.",
+      "button": "Je vote pour la meilleure commu'"
+    },
+    "ranking": {
+      "title": "Classement des meilleurs voteurs"
+    },
+    "stats": {
+      "title": "Statistiques",
+      "monthly_votes": "Votes du mois",
+      "monthly_clicks": "Clics du mois"
+    }
   }
 }

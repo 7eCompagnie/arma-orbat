@@ -23,6 +23,7 @@ import Visitor from "../Visitor";
 import NavbarLinksGroup from "../../../components/NavbarDropdown";
 import UserContext from "../../../context/User";
 import NotFound from "../../NotFound";
+import {TopServeurs} from "../../TopServeurs";
 
 const Dashboard = () => {
     const user = useContext(UserContext);
@@ -125,6 +126,7 @@ const Dashboard = () => {
                 <Route index element={
                     user.role === "VISITOR" ? <Visitor/> : <Text>Dashboard</Text>
                 } />
+                <Route path="/top-serveurs" element={<TopServeurs/>} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </AppShell>
