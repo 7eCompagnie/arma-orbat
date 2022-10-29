@@ -57,7 +57,7 @@ export function LinksGroup({ icon, label, initiallyOpened, links, to, color, per
 
 	if (isGranted(user, permission) ||
 		(label === "trainings" && userIsTrainer) ||
-		(label === "campaigns" && user.trainings.filter((training) => training.trainingId === zeusRoleId.value))) {
+		(label === "campaigns" && user.trainings.filter((training) => training.trainingId === zeusRoleId.value) > 0)) {
 		return (
 			<>
 				<UnstyledButton onClick={() => setOpened((o) => !o)} sx={(theme) => ({
