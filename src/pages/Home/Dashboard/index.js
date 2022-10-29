@@ -5,7 +5,7 @@ import {
     Burger,
     Header,
     MediaQuery,
-    Navbar,
+    Navbar, ScrollArea,
     Text,
     Tooltip,
     useMantineColorScheme,
@@ -40,7 +40,7 @@ const Dashboard = () => {
             asideOffsetBreakpoint="sm"
             navbar={
                 <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 300 }}>
-                    <Navbar.Section grow>
+                    <Navbar.Section grow component={ScrollArea}  scrollbarSize={6} offsetScrollbars>
                         <NavbarLinks/>
                         <NavbarLinksGroup/>
                     </Navbar.Section>

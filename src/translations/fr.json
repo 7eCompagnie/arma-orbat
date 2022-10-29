@@ -34,6 +34,9 @@
       "dashboard": "Tableau de bord",
       "play": "Prochaines opérations",
       "get_trained": "Se former",
+      "top_serveurs": "Top Serveurs",
+      "gallery": "Galerie",
+      "support_us": "Nous soutenir",
       "trainings": {
         "manage": "Gérer les formations",
         "create": "Créer une formation",
