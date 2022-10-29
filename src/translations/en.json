@@ -30,7 +30,7 @@
     "links": {
       "dashboard": "Dashboard",
       "play": "Upcoming operations",
-      "trainings": "Get trained"
+      "get_trained": "Get trained"
     }
   },
   "home": {

@@ -21,6 +21,7 @@ import UserBoxNavbar from "../../../components/UserBoxNavbar";
 import NavbarLinks from "../../../components/NavbarLinks";
 import user from "../../../context/User";
 import Visitor from "../Visitor";
+import NavbarLinksGroup from "../../../components/NavbarDropdown";
 
 const Dashboard = () => {
     const theme = useMantineTheme();
@@ -41,6 +42,7 @@ const Dashboard = () => {
                 <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 300 }}>
                     <Navbar.Section grow>
                         <NavbarLinks/>
+                        <NavbarLinksGroup/>
                     </Navbar.Section>
                     <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
                         <Navbar.Section>

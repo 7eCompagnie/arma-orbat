@@ -30,7 +30,7 @@
     "links": {
       "dashboard": "Tablero de mandos",
       "play": "Próximas operaciones",
-      "trainings": "Formarse"
+      "get_trained": "Formarse"
     }
   },  "home": {
   "visitor": {

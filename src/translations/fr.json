@@ -6,6 +6,9 @@
   "first_class": "Première classe",
   "soldiers": "Soldats",
   "operations": "Opérations",
+  "campaigns": "Campagnes",
+  "trainers": "Formateurs",
+  "trainings": "Formations",
   "languages": {
     "en": "Anglais",
     "fr": "Français",
@@ -30,7 +33,21 @@
     "links": {
       "dashboard": "Tableau de bord",
       "play": "Prochaines opérations",
-      "trainings": "Se former"
+      "get_trained": "Se former",
+      "trainings": {
+        "manage": "Gérer les formations",
+        "create": "Créer une formation",
+        "pass": "Faire passer une formation"
+      },
+      "campaigns": {
+        "manage": "Gérer les campagnes",
+        "create": "Créer une campagne"
+      },
+      "admin": {
+        "users": "Gérer les utilisateurs",
+        "whitelist": "Gérer les whitelists",
+        "config": "Configurer l'OrBat"
+      }
     }
   },
   "home": {
