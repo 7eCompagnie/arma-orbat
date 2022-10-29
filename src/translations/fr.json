@@ -86,5 +86,10 @@
         ]
       }
     }
+  },
+  "404": {
+    "title": "Il n'y a rien à voir ici",
+    "description": "La page que vous essayez d'ouvrir n'existe pas. Vous avez peut-être fait une erreur de frappe dans l'adresse, ou la page a été déplacée vers une autre URL. Si vous pensez qu'il s'agit d'une erreur, contactez-nous sur Discord.",
+    "back_to_home": "Retourner à la page d'accueil"
   }
 }

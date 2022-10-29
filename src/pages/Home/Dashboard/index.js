@@ -22,6 +22,7 @@ import NavbarLinks from "../../../components/NavbarLinks";
 import Visitor from "../Visitor";
 import NavbarLinksGroup from "../../../components/NavbarDropdown";
 import UserContext from "../../../context/User";
+import NotFound from "../../NotFound";
 
 const Dashboard = () => {
     const user = useContext(UserContext);
@@ -124,7 +125,7 @@ const Dashboard = () => {
                 <Route index element={
                     user.role === "VISITOR" ? <Visitor/> : <Text>Dashboard</Text>
                 } />
-                <Route path="*" element={<h1>Not found</h1>} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </AppShell>
     );
