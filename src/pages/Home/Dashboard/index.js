@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {
     ActionIcon,
     AppShell,
@@ -19,11 +19,12 @@ import logo from '../../../assets/images/logo.webp';
 import {LanguagePicker} from "../../../components/LanguagePicker";
 import UserBoxNavbar from "../../../components/UserBoxNavbar";
 import NavbarLinks from "../../../components/NavbarLinks";
-import user from "../../../context/User";
 import Visitor from "../Visitor";
 import NavbarLinksGroup from "../../../components/NavbarDropdown";
+import UserContext from "../../../context/User";
 
 const Dashboard = () => {
+    const user = useContext(UserContext);
     const theme = useMantineTheme();
     const [opened, setOpened] = useState(false);
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -121,7 +122,7 @@ const Dashboard = () => {
         >
             <Routes>
                 <Route index element={
-                    user.role === "VISITOR" ? <Text>Dashboard</Text> : <Visitor/>
+                    user.role === "VISITOR" ? <Visitor/> : <Text>Dashboard</Text>
                 } />
                 <Route path="*" element={<h1>Not found</h1>} />
             </Routes>
