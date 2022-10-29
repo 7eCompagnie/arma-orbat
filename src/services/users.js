@@ -25,3 +25,11 @@ export const isTrainer = async (user) => {
     }
     return false
 }
+
+export const getUserGuilds = (discordToken) => {
+    return fetch('https://discord.com/api/users/@me/guilds', {
+        headers: {
+            Authorization: `Bearer ${discordToken}`
+        }
+    })
+}

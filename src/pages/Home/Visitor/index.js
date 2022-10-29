@@ -6,24 +6,29 @@ import StatCard from "../../../components/StatCard";
 import {Link} from "./style";
 import {t} from "i18next";
 import {withNamespaces} from "react-i18next";
+import {getSetting} from "../../../services/settings";
+import {getUserGuilds} from "../../../services/users";
 
 export const Visitor = () => {
 	const user = useContext(UserContext);
 	const theme = useMantineTheme();
 	const [hasJoinedDiscord, setHasJoinedDiscord] = useState(false);
+	const [discordInviteUrl, setDiscordInviteUrl] = useState('');
 
 	useEffect(() => {
-		fetch('https://discord.com/api/users/@me/guilds', {
-			headers: {
-				Authorization: `Bearer ${user.discordToken}`
-			}
-		}).then(response => response.json()).then(data => {
+		getUserGuilds(user.discordToken).then(response => response.json()).then(data => {
 			for (let server of data) {
 				if (server.id === process.env.REACT_APP_DISCORD_7E_ID) {
 					setHasJoinedDiscord(true);
 					break;
 				}
 			}
+		}).catch(error => {
+			console.error(error);
+		});
+
+		getSetting('DISCORD_INVITE_URL').then(res => {
+			setDiscordInviteUrl(res.value);
 		}).catch(error => {
 			console.error(error);
 		});
@@ -62,7 +67,7 @@ export const Visitor = () => {
 						</Timeline.Item>
 
 						<Timeline.Item bullet={<Login size={22} />} title={t('home.visitor.timeline.steps.1.title')}>
-							<Text color="dimmed" size="sm">{t('home.visitor.timeline.steps.1.description')} <Link href={process.env.REACT_APP_DISCORD_INVITE_URL} target="_blank">{t('home.visitor.timeline.steps.1.here')}</Link>.</Text>
+							<Text color="dimmed" size="sm">{t('home.visitor.timeline.steps.1.description')} <Link href={discordInviteUrl} target="_blank">{t('home.visitor.timeline.steps.1.here')}</Link>.</Text>
 						</Timeline.Item>
 
 						<Timeline.Item bullet={<Sword size={22} />} title={t('home.visitor.timeline.steps.2.title')} lineVariant="dashed">

@@ -8,6 +8,7 @@ import Stat from "./Stat";
 import {AlertCircle, CircleCheck, ExternalLink, MailForward, Pointer} from "tabler-icons-react";
 import UserContext from "../../context/User";
 import {t} from "i18next";
+import {getSetting} from "../../services/settings";
 
 export const TopServeurs = () => {
 	const user = useContext(UserContext);
@@ -15,18 +16,38 @@ export const TopServeurs = () => {
 	const [players, setPlayers] = useState([]);
 	const [hasVoted, setHasVoted] = useState(false);
 	const [monthlyStats, setMonthlyStats] = useState([]);
+	const [goalVotes, setGoalVotes] = useState(0);
+	const [goalClicks, setGoalClicks] = useState(0);
 
 	useEffect(() => {
 		getPlayersRanking().then(res => {
 			setPlayers(res.players);
+		}).catch(err => {
+			console.log(err);
 		});
 
 		getServerInfos().then(res => {
 			setMonthlyStats(res.server.last_monthly_stat[0]);
+		}).catch(err => {
+			console.log(err);
 		});
 
 		userHasVoted(user.discordUsername).then(res => {
 			setHasVoted(res.success);
+		}).catch(err => {
+			console.log(err);
+		});
+
+		getSetting('VOTES_GOAL').then(res => {
+			setGoalVotes(res.value);
+		}).catch(err => {
+			console.log(err);
+		});
+
+		getSetting('CLICKS_GOAL').then(res => {
+			setGoalClicks(res.value);
+		}).catch(err => {
+			console.log(err);
 		});
 	}, [user]);
 
@@ -76,8 +97,8 @@ export const TopServeurs = () => {
 						{t('top_serveurs.stats.title')}
 					</Title>
 					<SimpleGrid cols={1}>
-						<Stat title={t('top_serveurs.stats.monthly_votes')} goalValue={300} goalUnit={t('votes').toLowerCase()} icon={<MailForward size={34} />} value={monthlyStats[currentMonth + "_votes"]}/>
-						<Stat title={t('top_serveurs.stats.monthly_clicks')} goalValue={500} goalUnit={t('clicks').toLowerCase()} icon={<Pointer size={34} />} value={monthlyStats[currentMonth + "_clics"]}/>
+						<Stat title={t('top_serveurs.stats.monthly_votes')} goalValue={goalVotes} goalUnit={t('votes').toLowerCase()} icon={<MailForward size={34} />} value={monthlyStats[currentMonth + "_votes"]}/>
+						<Stat title={t('top_serveurs.stats.monthly_clicks')} goalValue={goalClicks} goalUnit={t('clicks').toLowerCase()} icon={<Pointer size={34} />} value={monthlyStats[currentMonth + "_clics"]}/>
 					</SimpleGrid>
 				</Grid.Col>
 			</Grid>

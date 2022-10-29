@@ -5,12 +5,8 @@ import Dashboard from "./Dashboard";
 
 const Home = () => {
     const user = useContext(UserContext);
-    let token = localStorage.getItem('token')
+    const token = localStorage.getItem('token');
 
-    if (token === "undefined") {
-        localStorage.removeItem('token')
-        token = undefined
-    }
 
     if (!user && token)
         return <h1>Loading...</h1>

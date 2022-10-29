@@ -73,8 +73,8 @@ const Login = () => {
                 localStorage.setItem('token', data.token)
 
                 if (window.opener && window.opener !== window) {
-                    window.opener.location.reload();
                     window.close();
+                    window.opener.location.reload();
                 }
             }).catch(e => {
                 console.error(e)

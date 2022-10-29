@@ -43,20 +43,22 @@ export const Right = styled.div`
 export const StyledTitle = styled(Title)`
     color: #fff;
     margin-bottom: 2rem;
+    font-size: 28px;
 
 	@media (max-width: 1000px) {
 		margin-bottom: 1rem;
-		font-size: 28px;
+		font-size: 24px;
 	    text-align: center;
 	}
 `
 
 export const SubTitle = styled(Title)`
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+  	font-size: 22px;
 
     @media (max-width: 1000px) {
 		margin-bottom: 2rem;
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
     }
 `
@@ -95,7 +97,7 @@ export const DescriptionText = styled(Text)`
 
 export const Logo = styled.img`
     width: 40%;
-    margin: 0 auto 5rem;
+    margin: 0 auto 3rem;
     
     @media (max-width: 1000px) {
         display: none;
@@ -103,17 +105,13 @@ export const Logo = styled.img`
 `
 
 export const Footer = styled.div`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 2rem 4rem;
+  	margin-top: 2rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     
     @media (max-width: 1000px) {
-        padding: 0;
         margin-top: 1.5rem;
         position: relative;
     }
