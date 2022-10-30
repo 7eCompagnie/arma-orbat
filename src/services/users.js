@@ -1,13 +1,3 @@
-// fetch('http://localhost:4000/users/sign-in', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//         code
-//     })
-// })
-
 import {getFetch, postFetch} from "../lib/fetch";
 
 export const signIn = (code) => {
@@ -24,6 +14,14 @@ export const isTrainer = async (user) => {
         }
     }
     return false
+}
+
+export const getUserFromToken = (token) => {
+    return getFetch('http://localhost:4000/users/token', {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
 }
 
 export const getUserGuilds = (discordToken) => {

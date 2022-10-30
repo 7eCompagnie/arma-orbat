@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import UserContext from "./context/User";
 import "./assets/styles/reset.css";
 import {ColorSchemeProvider, MantineProvider} from "@mantine/core";
+import {getUserFromToken} from "./services/users";
 
 function App() {
     const [user, setUser] = React.useState(null);
@@ -16,13 +17,9 @@ function App() {
 
     useEffect(() => {
         if (token != null) {
-            fetch('http://localhost:4000/users/token', {
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`
-                }
-            }).then(response => response.json()).then(data => {
+            getUserFromToken(token).then(data => {
                 setUser(data);
-            })
+            });
         }
     }, [token]);
 
