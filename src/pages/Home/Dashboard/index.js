@@ -1,12 +1,12 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import {
     ActionIcon,
     AppShell,
     Burger,
     Header,
     MediaQuery,
-    Navbar, ScrollArea,
-    Text,
+    Navbar,
+    ScrollArea,
     Tooltip,
     useMantineColorScheme,
     useMantineTheme
@@ -18,15 +18,13 @@ import {Container, Left, Logo, Right, Title} from "./style";
 import logo from '../../../assets/images/logo.webp';
 import {LanguagePicker} from "../../../components/LanguagePicker";
 import UserBoxNavbar from "../../../components/UserBoxNavbar";
-import NavbarLinks from "../../../components/NavbarLinks";
-import Visitor from "../Visitor";
-import NavbarLinksGroup from "../../../components/NavbarDropdown";
-import UserContext from "../../../context/User";
 import NotFound from "../../NotFound";
-import {TopServeurs} from "../../TopServeurs";
+import TopServeurs from "../../TopServeurs";
+import SupportUs from "../../SupportUs";
+import Content from "./Content";
+import NavbarLinks from "../../../components/NavbarLinks";
 
 const Dashboard = () => {
-    const user = useContext(UserContext);
     const theme = useMantineTheme();
     const [opened, setOpened] = useState(false);
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -45,7 +43,7 @@ const Dashboard = () => {
                 <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 300 }}>
                     <Navbar.Section grow component={ScrollArea}  scrollbarSize={6} offsetScrollbars>
                         <NavbarLinks/>
-                        <NavbarLinksGroup/>
+                        {/*<NavbarLinksGroup/>*/}
                     </Navbar.Section>
                     <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
                         <Navbar.Section>
@@ -123,10 +121,9 @@ const Dashboard = () => {
             }
         >
             <Routes>
-                <Route index element={
-                    user.role === "VISITOR" ? <Visitor/> : <Text>Dashboard</Text>
-                } />
+                <Route index element={<Content/>} />
                 <Route path="/top-serveurs" element={<TopServeurs/>} />
+                <Route path="/support-us" element={<SupportUs/>} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </AppShell>

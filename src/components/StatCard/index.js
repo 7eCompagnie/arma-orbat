@@ -1,22 +1,24 @@
-import {Group, Paper, Text} from '@mantine/core';
+import {Group, Paper, Skeleton, Text} from '@mantine/core';
 import {useStyles} from "./style";
 
-export const StatCard = ({title, icon, value }) => {
+export const StatCard = ({title, icon, value, isLoading = false }) => {
 	const { classes } = useStyles();
 
 	return (
-		<Paper withBorder p="md" radius="md" key={title}>
-			<Group position="apart">
-				<Text size="xs" color="dimmed" className={classes.title}>
-					{title}
-				</Text>
-				{icon}
-			</Group>
+		<Skeleton radius="md" visible={isLoading}>
+			<Paper withBorder p="md" radius="md" key={title}>
+				<Group position="apart">
+					<Text size="xs" color="dimmed" className={classes.title}>
+						{title}
+					</Text>
+					{icon}
+				</Group>
 
-			<Group align="flex-end" spacing="xs" mt={25}>
-				<Text className={classes.value}>{value}</Text>
-			</Group>
-		</Paper>
+				<Group align="flex-end" spacing="xs" mt={25}>
+					<Text className={classes.value}>{value}</Text>
+				</Group>
+			</Paper>
+		</Skeleton>
 	);
 }
 

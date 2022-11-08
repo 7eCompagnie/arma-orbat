@@ -1,5 +1,5 @@
 import {withNamespaces} from "react-i18next";
-import {Alert, Button, Center, Container, Grid, SimpleGrid, Title, useMantineTheme} from "@mantine/core";
+import {Alert, Button, Center, Container, Grid, SimpleGrid, Skeleton, Title, useMantineTheme} from "@mantine/core";
 import {useContext, useEffect, useState} from "react";
 import {getPlayersRanking, getServerInfos, userHasVoted} from "../../services/topServeurs";
 import Card from "./Card";
@@ -13,21 +13,29 @@ import {getSetting} from "../../services/settings";
 export const TopServeurs = () => {
 	const user = useContext(UserContext);
 	const theme = useMantineTheme();
-	const [players, setPlayers] = useState([]);
+	const [players, setPlayers] = useState([{}, {}, {}, {}, {}, {}, {}]);
 	const [hasVoted, setHasVoted] = useState(false);
-	const [monthlyStats, setMonthlyStats] = useState([]);
+	const [monthlyVotes, setMonthlyVotes] = useState(0);
+	const [monthlyClicks, setMonthlyClicks] = useState(0);
 	const [goalVotes, setGoalVotes] = useState(0);
 	const [goalClicks, setGoalClicks] = useState(0);
+	const [isPlayersLoading, setIsPlayersLoading] = useState(true);
 
 	useEffect(() => {
+		if (!user) return;
+
 		getPlayersRanking().then(res => {
 			setPlayers(res.players);
+			setIsPlayersLoading(false);
 		}).catch(err => {
 			console.log(err);
 		});
 
 		getServerInfos().then(res => {
-			setMonthlyStats(res.server.last_monthly_stat[0]);
+			const currentMonth = getMonthName(new Date().getMonth()).toLowerCase();
+
+			setMonthlyVotes(res.server.last_monthly_stat[0][currentMonth + "_votes"]);
+			setMonthlyClicks(res.server.last_monthly_stat[0][currentMonth + "_clics"]);
 		}).catch(err => {
 			console.log(err);
 		});
@@ -63,11 +71,11 @@ export const TopServeurs = () => {
 
 	const items = players.map((player, index) => {
 		return (
-			<Card key={index} player={player} />
+			<Skeleton visible={isPlayersLoading} key={index}>
+				<Card player={player} />
+			</Skeleton>
 		);
 	}).filter((item, index) => index > 0);
-
-	const currentMonth = getMonthName(new Date().getMonth()).toLowerCase();
 
 	return (
 		<Container py={"2rem"}>
@@ -97,8 +105,8 @@ export const TopServeurs = () => {
 						{t('top_serveurs.stats.title')}
 					</Title>
 					<SimpleGrid cols={1}>
-						<Stat title={t('top_serveurs.stats.monthly_votes')} goalValue={goalVotes} goalUnit={t('votes').toLowerCase()} icon={<MailForward size={34} />} value={monthlyStats[currentMonth + "_votes"]}/>
-						<Stat title={t('top_serveurs.stats.monthly_clicks')} goalValue={goalClicks} goalUnit={t('clicks').toLowerCase()} icon={<Pointer size={34} />} value={monthlyStats[currentMonth + "_clics"]}/>
+						<Stat title={t('top_serveurs.stats.monthly_votes')} goalValue={goalVotes} goalUnit={t('votes').toLowerCase()} icon={<MailForward size={34} />} value={monthlyVotes}/>
+						<Stat title={t('top_serveurs.stats.monthly_clicks')} goalValue={goalClicks} goalUnit={t('clicks').toLowerCase()} icon={<Pointer size={34} />} value={monthlyClicks}/>
 					</SimpleGrid>
 				</Grid.Col>
 			</Grid>

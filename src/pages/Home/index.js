@@ -8,9 +8,7 @@ const Home = () => {
     const token = localStorage.getItem('token');
 
 
-    if (!user && token)
-        return <h1>Loading...</h1>
-    else if (!user && !token)
+    if (!user && !token)
         return <Login />
     else
         return <Dashboard />

@@ -26,7 +26,7 @@ const useStyles = createStyles((theme) => ({
 
 export function Stat({title, goalValue, goalUnit, icon, value}) {
 	const { classes } = useStyles();
-	const percentage = parseInt((value / goalValue) * 100);
+	const percentage = goalValue === 0 ? 0 : Math.round((value / goalValue) * 100);
 	const dateToday = new Date();
 	const lastDayOfMonth = new Date(dateToday.getFullYear(), dateToday.getMonth()+1, 0).getDate();
 	const daysUntilEndOfMonth = lastDayOfMonth - dateToday.getDate();

@@ -1,5 +1,5 @@
-import {Container, Grid, SimpleGrid, Text, Timeline, Title, useMantineTheme} from "@mantine/core";
-import {Login, Sword, World} from "tabler-icons-react";
+import {Alert, Container, Grid, SimpleGrid, Text, Timeline, Title, useMantineTheme} from "@mantine/core";
+import {AlertTriangle, Login, Sword, World} from "tabler-icons-react";
 import {useContext, useEffect, useState} from "react";
 import UserContext from "../../../context/User";
 import StatCard from "../../../components/StatCard";
@@ -8,18 +8,24 @@ import {t} from "i18next";
 import {withNamespaces} from "react-i18next";
 import {getSetting} from "../../../services/settings";
 import {getUserGuilds} from "../../../services/users";
+import Loading from "./Loading";
 
 export const Visitor = () => {
 	const user = useContext(UserContext);
 	const theme = useMantineTheme();
 	const [hasJoinedDiscord, setHasJoinedDiscord] = useState(false);
 	const [discordInviteUrl, setDiscordInviteUrl] = useState('');
+	const [isLoadingGuild, setIsLoadingGuild] = useState(true);
+	const [isLoadingInvite, setIsLoadingInvite] = useState(true);
 
 	useEffect(() => {
+		if (!user) return;
+
 		getUserGuilds(user.discordToken).then(response => response.json()).then(data => {
 			for (let server of data) {
 				if (server.id === process.env.REACT_APP_DISCORD_7E_ID) {
 					setHasJoinedDiscord(true);
+					setIsLoadingGuild(false);
 					break;
 				}
 			}
@@ -29,14 +35,21 @@ export const Visitor = () => {
 
 		getSetting('DISCORD_INVITE_URL').then(res => {
 			setDiscordInviteUrl(res.value);
+			setIsLoadingInvite(false);
 		}).catch(error => {
 			console.error(error);
 		});
 	}, [user]);
 
+	if (!user || isLoadingGuild || isLoadingInvite)
+		return <Loading/>
 
 	return (
 		<Container py={"2rem"}>
+			{!hasJoinedDiscord ?
+				<Alert color="orange" mb="2rem" title={t('home.visitor.alert.title')} icon={<AlertTriangle/>}>
+					{t('home.visitor.alert.description')} <Link href={discordInviteUrl} target="_blank">{t('here')}</Link>.
+				</Alert> : null}
 			<Grid gutter="50">
 				<Grid.Col span={12} sm={7}>
 					<Title order={2} mb="2rem" color={theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[9]}>
@@ -67,7 +80,7 @@ export const Visitor = () => {
 						</Timeline.Item>
 
 						<Timeline.Item bullet={<Login size={22} />} title={t('home.visitor.timeline.steps.1.title')}>
-							<Text color="dimmed" size="sm">{t('home.visitor.timeline.steps.1.description')} <Link href={discordInviteUrl} target="_blank">{t('home.visitor.timeline.steps.1.here')}</Link>.</Text>
+							<Text color="dimmed" size="sm">{t('home.visitor.timeline.steps.1.description')} <Link href={discordInviteUrl} target="_blank">{t('here')}</Link>.</Text>
 						</Timeline.Item>
 
 						<Timeline.Item bullet={<Sword size={22} />} title={t('home.visitor.timeline.steps.2.title')} lineVariant="dashed">

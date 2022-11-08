@@ -1,11 +1,11 @@
 import {getFetch, postFetch} from "../lib/fetch";
 
 export const signIn = (code) => {
-    return postFetch('http://localhost:4000/users/sign-in',{code: code})
+    return postFetch(`${process.env.REACT_APP_API_ENDPOINT}/users/sign-in`,{code: code})
 }
 
 export const isTrainer = async (user) => {
-    const trainings = await getFetch(`http://localhost:4000/trainings/`)
+    const trainings = await getFetch(`${process.env.REACT_APP_API_ENDPOINT}/trainings/`)
 
     for (let training of trainings) {
         for (let trainer of training.trainers) {
@@ -17,7 +17,7 @@ export const isTrainer = async (user) => {
 }
 
 export const getUserFromToken = (token) => {
-    return getFetch('http://localhost:4000/users/token', {
+    return getFetch(`${process.env.REACT_APP_API_ENDPOINT}/users/token`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }

@@ -6,11 +6,15 @@ import {useContext} from "react";
 import UserContext from "../../context/User";
 import {isGranted} from "../../data/roles";
 import {withNamespaces} from "react-i18next";
+import Loading from "./Loading";
 
 function MainLink({ icon, color, label, to, permission }) {
 	const navigate = useNavigate();
 	const user = useContext(UserContext);
 	const location = useLocation();
+
+	if (!user)
+		return <Loading color={color}/>;
 
 	if (!isGranted(user, permission))
 		return null;

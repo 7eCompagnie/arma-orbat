@@ -9,10 +9,10 @@ import {getUserFromToken} from "./services/users";
 function App() {
     const [user, setUser] = React.useState(null);
     const token = localStorage.getItem('token')
-    const [colorScheme, setColorScheme] = useState(localStorage.getItem('colorScheme' || 'light'));
+    const [colorScheme, setColorScheme] = useState(localStorage.getItem('theme') || 'light');
     const toggleColorScheme = (value) => {
         setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
-        localStorage.setItem('colorScheme', value || (colorScheme === 'dark' ? 'light' : 'dark'));
+        localStorage.setItem('theme', value || (colorScheme === 'dark' ? 'light' : 'dark'));
     }
 
     useEffect(() => {

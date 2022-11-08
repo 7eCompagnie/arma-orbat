@@ -15,6 +15,7 @@
   "clicks": "Clics",
   "days_left": "Jours restants",
   "day_left": "Jour restant",
+  "here": "ici",
   "languages": {
     "en": "Anglais",
     "fr": "Français",
@@ -61,6 +62,10 @@
   },
   "home": {
     "visitor": {
+      "alert": {
+        "title": "Vous n'avez pas encore rejoint notre Discord !",
+        "description": "Pour accèder à l'OrBat, vous devez rejoindre notre Discord. Vous pouvez le faire en cliquant sur le lien"
+      },
       "global": {
         "title": "Bienvenue soldat !",
         "about_to_join": "vous êtes sur le point de rejoindre la 7ème Compagnie.",
@@ -78,8 +83,7 @@
           },
           {
             "title": "Rejoindre notre Discord",
-            "description": "Rejoignez-nous sur notre serveur Discord",
-            "here": "ici"
+            "description": "Rejoignez-nous sur notre serveur Discord"
           },
           {
             "title": "Passer sa formation initiale",

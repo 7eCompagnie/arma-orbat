@@ -1,18 +1,12 @@
-import React, {useContext} from 'react';
-import {IconChevronLeft, IconChevronRight} from '@tabler/icons';
-import {Avatar, Box, Group, Menu, Text, UnstyledButton, useMantineTheme} from '@mantine/core';
-import {getDiscordAvatar} from "../../utils/discord";
-import UserContext from "../../context/User";
-import {roles} from "../../data/roles";
+import {Box, Group, Menu, Skeleton, UnstyledButton, useMantineTheme} from "@mantine/core";
 import {t} from "i18next";
-import {withNamespaces} from "react-i18next";
+import {IconChevronLeft, IconChevronRight} from "@tabler/icons";
 import {Logout} from "tabler-icons-react";
-import {links as data} from '../../data/userBoxLinks'
-import Loading from "./Loading";
+import React from "react";
+import {links as data} from "../../data/userBoxLinks";
 
-export function UserBoxNavbar() {
+export const Loading = () => {
 	const theme = useMantineTheme();
-	const user = useContext(UserContext);
 
 	const items = data.map((item) => (
 		<Menu.Item
@@ -25,9 +19,6 @@ export function UserBoxNavbar() {
 			{t(item.label)}
 		</Menu.Item>
 	));
-
-	if (!user)
-		return <Loading/>
 
 	return (
 		<Menu
@@ -57,17 +48,10 @@ export function UserBoxNavbar() {
 						}}
 					>
 						<Group>
-							<Avatar
-								src={getDiscordAvatar(user.discordIdentifier, user.discordAvatar)}
-								radius="xl"
-							/>
+							<Skeleton height={38} width={38} radius="xl"/>
 							<Box sx={{ flex: 1 }}>
-								<Text size="sm" weight={500}>
-									{user.discordUsername}
-								</Text>
-								<Text color="dimmed" size="xs">
-									{t(roles[user.role.toLowerCase()].display)}
-								</Text>
+								<Skeleton height={8} radius="xl" width="80%" />
+								<Skeleton height={4} width="40%" mt={8} radius="xl" />
 							</Box>
 
 							{theme.dir === 'ltr' ? <IconChevronRight size={18} /> : <IconChevronLeft size={18} />}
@@ -89,7 +73,7 @@ export function UserBoxNavbar() {
 				</Menu.Item>
 			</Menu.Dropdown>
 		</Menu>
-	);
+	)
 }
 
-export default withNamespaces()(UserBoxNavbar);
+export default Loading;

@@ -1,5 +1,5 @@
 import {getFetch} from "../lib/fetch";
 
 export const getSetting = (name) => {
-	return getFetch(`http://localhost:4000/settings/${name}`)
+	return getFetch(`${process.env.REACT_APP_API_ENDPOINT}/settings/${name}`)
 }
