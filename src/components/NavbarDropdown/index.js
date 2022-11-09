@@ -10,6 +10,7 @@ import UserContext from "../../context/User";
 import {withNamespaces} from "react-i18next";
 import {isTrainer} from "../../services/users";
 import {getSetting} from "../../services/settings";
+import Loading from "../NavbarLinks/Loading";
 
 export function LinksGroup({ icon, label, initiallyOpened, links, to, color, permission }) {
 	const { classes, theme } = useStyles();
@@ -23,6 +24,8 @@ export function LinksGroup({ icon, label, initiallyOpened, links, to, color, per
 	const [opened, setOpened] = useState(initiallyOpened || false);
 
 	useEffect(() => {
+		if (!user) return;
+
 		isTrainer(user).then((data) => {
 			setUserIsTrainer(data);
 		}).catch((err) => {
@@ -35,6 +38,9 @@ export function LinksGroup({ icon, label, initiallyOpened, links, to, color, per
 			console.log(err);
 		})
 	}, [user]);
+
+	if (!user)
+		return <Loading color={color} />
 
 	const items = (hasLinks ? links : []).map((link) => {
 		if (isGranted(user, permission) ||

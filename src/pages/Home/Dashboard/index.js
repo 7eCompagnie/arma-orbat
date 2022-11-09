@@ -23,6 +23,7 @@ import TopServeurs from "../../TopServeurs";
 import SupportUs from "../../SupportUs";
 import Content from "./Content";
 import NavbarLinks from "../../../components/NavbarLinks";
+import {NavbarLinksGroup} from "../../../components/NavbarDropdown";
 
 const Dashboard = () => {
     const theme = useMantineTheme();
@@ -43,7 +44,7 @@ const Dashboard = () => {
                 <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 300 }}>
                     <Navbar.Section grow component={ScrollArea}  scrollbarSize={6} offsetScrollbars>
                         <NavbarLinks/>
-                        {/*<NavbarLinksGroup/>*/}
+                        <NavbarLinksGroup/>
                     </Navbar.Section>
                     <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
                         <Navbar.Section>
