@@ -21,9 +21,6 @@ const Gallery = () => {
 		});
 	}, []);
 
-	if (!user)
-		return <h1>Loading</h1>
-
 	return (
 		<Container py={"2rem"}>
 			<Group position="right">
@@ -44,7 +41,8 @@ const Gallery = () => {
 					           description={image.description}
 					           author={image.user}
 					           date={image.createdAt}
-					           defaultLiked={ !!image.likes.find((like) => like.userId === user.id) }
+					           likes={image.likes}
+					           user={user}
 					/>
 				))}
 			</SimpleGrid>
