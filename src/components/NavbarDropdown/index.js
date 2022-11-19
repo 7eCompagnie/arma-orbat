@@ -29,13 +29,13 @@ export function LinksGroup({ icon, label, initiallyOpened, links, to, color, per
 		isTrainer(user).then((data) => {
 			setUserIsTrainer(data);
 		}).catch((err) => {
-			console.log(err);
+			console.error(err);
 		});
 
 		getSetting('ZEUS_ROLE_ID').then((data) => {
 			setZeusRoleId(data);
 		}).catch((err) => {
-			console.log(err);
+			console.error(err);
 		})
 	}, [user]);
 

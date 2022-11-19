@@ -28,7 +28,7 @@ export const TopServeurs = () => {
 			setPlayers(res.players);
 			setIsPlayersLoading(false);
 		}).catch(err => {
-			console.log(err);
+			console.error(err);
 		});
 
 		getServerInfos().then(res => {
@@ -37,25 +37,25 @@ export const TopServeurs = () => {
 			setMonthlyVotes(res.server.last_monthly_stat[0][currentMonth + "_votes"]);
 			setMonthlyClicks(res.server.last_monthly_stat[0][currentMonth + "_clics"]);
 		}).catch(err => {
-			console.log(err);
+			console.error(err);
 		});
 
 		userHasVoted(user.discordUsername).then(res => {
 			setHasVoted(res.success);
 		}).catch(err => {
-			console.log(err);
+			console.error(err);
 		});
 
 		getSetting('VOTES_GOAL').then(res => {
 			setGoalVotes(res.value);
 		}).catch(err => {
-			console.log(err);
+			console.error(err);
 		});
 
 		getSetting('CLICKS_GOAL').then(res => {
 			setGoalClicks(res.value);
 		}).catch(err => {
-			console.log(err);
+			console.error(err);
 		});
 	}, [user]);
 

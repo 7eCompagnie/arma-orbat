@@ -24,6 +24,7 @@ import SupportUs from "../../SupportUs";
 import Content from "./Content";
 import NavbarLinks from "../../../components/NavbarLinks";
 import {NavbarLinksGroup} from "../../../components/NavbarDropdown";
+import Gallery from "../../Gallery";
 
 const Dashboard = () => {
     const theme = useMantineTheme();
@@ -123,6 +124,7 @@ const Dashboard = () => {
         >
             <Routes>
                 <Route index element={<Content/>} />
+                <Route path="/gallery" element={<Gallery/>} />
                 <Route path="/top-serveurs" element={<TopServeurs/>} />
                 <Route path="/support-us" element={<SupportUs/>} />
                 <Route path="*" element={<NotFound />} />
