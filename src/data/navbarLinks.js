@@ -15,7 +15,7 @@ export const links = [
 	{ icon: <DeviceGamepad2 size={16} />, to: "/test", color: 'blue', label: 'navbar.links.play', permission: 'USER' },
 	{ icon: <Sword size={16} />, to: "/test2", color: 'cyan', label: 'navbar.links.get_trained', permission: 'USER' },
 	{ icon: <Mail size={16} />, to: "/top-serveurs", color: 'green', label: 'navbar.links.top_serveurs', permission: 'VISITOR' },
-	{ icon: <Photo size={16} />, to: "/gallery", color: 'yellow', label: 'navbar.links.gallery', permission: 'VISITOR' },
+	{ icon: <Photo size={16} />, to: "/gallery/", color: 'yellow', label: 'navbar.links.gallery', permission: 'VISITOR' },
 	{ icon: <ZoomMoney size={16} />, to: "/support-us", color: 'orange', label: 'navbar.links.support_us', permission: 'USER' },
 ];
 

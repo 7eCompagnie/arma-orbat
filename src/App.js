@@ -5,6 +5,7 @@ import UserContext from "./context/User";
 import "./assets/styles/reset.css";
 import {ColorSchemeProvider, MantineProvider} from "@mantine/core";
 import {getUserFromToken} from "./services/users";
+import {NotificationsProvider} from "@mantine/notifications";
 
 function App() {
     const [user, setUser] = React.useState(null);
@@ -33,13 +34,15 @@ function App() {
                 fontFamily: 'Monserrat, sans-serif',
             },
         }}>
-            <UserContext.Provider value={user}>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/*" element={<Home />} />
-                    </Routes>
-                </BrowserRouter>
-            </UserContext.Provider>
+            <NotificationsProvider>
+                <UserContext.Provider value={user}>
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path="/*" element={<Home />} />
+                        </Routes>
+                    </BrowserRouter>
+                </UserContext.Provider>
+            </NotificationsProvider>
         </MantineProvider>
     </ColorSchemeProvider>
     );

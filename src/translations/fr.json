@@ -16,6 +16,7 @@
   "days_left": "Jours restants",
   "day_left": "Jour restant",
   "here": "ici",
+  "errors_detected": "Une ou plusieurs erreurs ont été détectées",
   "languages": {
     "en": "Anglais",
     "fr": "Français",
@@ -121,8 +122,28 @@
   },
   "gallery": {
     "published_by": "publié par",
+    "on": "le",
     "people_liked_this": "personnes ont aimé ceci",
     "like": "J'aime",
-    "dont_like": "Je n'aime pas"
+    "dont_like": "Je n'aime pas",
+    "add_image": "Ajouter une image",
+    "add": {
+      "choose_operation": {
+        "label": "Choisis une opération",
+        "placeholder": "Ex: Murin",
+        "not_found": "Aucune opération trouvée"
+      },
+      "image_title": {
+        "label": "Titre de l'image",
+        "placeholder": "Ex: Briefing"
+      },
+      "image_description": {
+        "label": "Description",
+        "placeholder": "Ex: Tous les soldats de la 7ème Compagnie se réunissent pour le brefiend avant le début de l'opération."
+      },
+      "image": {
+        "label": "Image"
+      }
+    }
   }
 }

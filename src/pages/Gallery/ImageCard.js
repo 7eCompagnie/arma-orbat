@@ -8,7 +8,7 @@ import {t} from "i18next";
 import {withNamespaces} from "react-i18next";
 
 
-function ImageCard({id, image, title, description, author, rating, defaultLiked, ...others}) {
+function ImageCard({id, image, title, description, author, rating, defaultLiked, date}) {
 	const { classes, cx, theme } = useStyles();
 	const [liked, setLiked] = useState(defaultLiked);
 	const [likesCount, setLikesCount] = useState(0);
@@ -38,7 +38,7 @@ function ImageCard({id, image, title, description, author, rating, defaultLiked,
 	}
 
 	return (
-		<Card withBorder radius="md" className={cx(classes.card)} {...others}>
+		<Card withBorder radius="md" className={cx(classes.card)}>
 			<Card.Section>
 				<Image src={image} height={180} />
 			</Card.Section>
@@ -60,7 +60,7 @@ function ImageCard({id, image, title, description, author, rating, defaultLiked,
 					<Avatar src={getDiscordAvatar(author.discordIdentifier, author.discordAvatar)} size={24} radius="xl" mr="xs" />
 
 					<Text size="sm" inline>
-						{t('gallery.published_by')} <span style={{fontWeight: "bold"}}>{author.discordUsername}</span>
+						{t('gallery.published_by')} <span style={{fontWeight: "bold"}}>{author.discordUsername}</span> {t('gallery.on')} {new Date(date).toLocaleDateString()}
 					</Text>
 				</Center>
 			</Group>
