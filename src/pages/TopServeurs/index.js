@@ -15,6 +15,7 @@ export const TopServeurs = () => {
 	const theme = useMantineTheme();
 	const [players, setPlayers] = useState([{}, {}, {}, {}, {}, {}, {}]);
 	const [hasVoted, setHasVoted] = useState(false);
+	const [hasVotedLoading, setHasVotedLoading] = useState(true);
 	const [monthlyVotes, setMonthlyVotes] = useState(0);
 	const [monthlyClicks, setMonthlyClicks] = useState(0);
 	const [goalVotes, setGoalVotes] = useState(0);
@@ -42,6 +43,7 @@ export const TopServeurs = () => {
 
 		userHasVoted(user.discordUsername).then(res => {
 			setHasVoted(res.success);
+			setHasVotedLoading(false);
 		}).catch(err => {
 			console.error(err);
 		});
@@ -64,9 +66,11 @@ export const TopServeurs = () => {
 			{t('top_serveurs.vote.done')}
 		</Alert>
 	) : (
-		<Alert mb="2rem" icon={<CircleCheck size={16} />} title={t('top_serveurs.vote.available_title')} color="green">
-			{t('top_serveurs.vote.available')}
-		</Alert>
+		<Skeleton mb="2rem" visible={hasVotedLoading}>
+			<Alert icon={<CircleCheck size={16} />} title={t('top_serveurs.vote.available_title')} color="green">
+				{t('top_serveurs.vote.available')}
+			</Alert>
+		</Skeleton>
 	);
 
 	const items = players.map((player, index) => {

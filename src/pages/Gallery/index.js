@@ -1,5 +1,5 @@
 import {Container, SimpleGrid, useMantineTheme} from "@mantine/core";
-import ImageCard from "./ImageCard/ImageCard";
+import ImageCard from "./ImageCard";
 import {useContext, useEffect, useState} from "react";
 import {getImages} from "../../services/images";
 import UserContext from "../../context/User";

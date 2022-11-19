@@ -1,9 +1,11 @@
 import {IconHeart, IconHeartBroken} from '@tabler/icons';
 import {ActionIcon, Avatar, Badge, Card, Center, Group, Image, Text, Tooltip,} from '@mantine/core';
 import {useStyles} from "./style";
-import {getDiscordAvatar} from "../../../utils/discord";
-import {addLike, getLikesOfImage, removeLike} from "../../../services/imageLikes";
+import {getDiscordAvatar} from "../../utils/discord";
+import {addLike, getLikesOfImage, removeLike} from "../../services/imageLikes";
 import {useEffect, useState} from "react";
+import {t} from "i18next";
+import {withNamespaces} from "react-i18next";
 
 
 function ImageCard({id, image, title, description, author, rating, defaultLiked, ...others}) {
@@ -58,7 +60,7 @@ function ImageCard({id, image, title, description, author, rating, defaultLiked,
 					<Avatar src={getDiscordAvatar(author.discordIdentifier, author.discordAvatar)} size={24} radius="xl" mr="xs" />
 
 					<Text size="sm" inline>
-						publiée par <span style={{fontWeight: "bold"}}>{author.discordUsername}</span>
+						{t('gallery.published_by')} <span style={{fontWeight: "bold"}}>{author.discordUsername}</span>
 					</Text>
 				</Center>
 			</Group>
@@ -66,10 +68,10 @@ function ImageCard({id, image, title, description, author, rating, defaultLiked,
 			<Card.Section className={classes.footer}>
 				<Group position="apart">
 					<Text size="xs" color="dimmed">
-						{likesCount} personnes ont aimé ceci
+						{likesCount} {t('gallery.people_liked_this')}
 					</Text>
 					<Group spacing={0}>
-						<Tooltip label={liked ? "Je n'aime pas" : "J'aime" } position="top" withArrow>
+						<Tooltip label={liked ? t('gallery.dont_like') : t('gallery.like') } position="top" withArrow>
 							<ActionIcon onClick={() => toggleLike()}>
 								{ liked ? <IconHeartBroken size={18} color={theme.colors.red[6]} /> : <IconHeart size={18} color={theme.colors.red[6]} /> }
 							</ActionIcon>
@@ -81,4 +83,4 @@ function ImageCard({id, image, title, description, author, rating, defaultLiked,
 	);
 }
 
-export default ImageCard
+export default withNamespaces()(ImageCard)

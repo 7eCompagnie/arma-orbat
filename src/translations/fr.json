@@ -118,5 +118,11 @@
       "monthly_votes": "Votes du mois",
       "monthly_clicks": "Clics du mois"
     }
+  },
+  "gallery": {
+    "published_by": "publié par",
+    "people_liked_this": "personnes ont aimé ceci",
+    "like": "J'aime",
+    "dont_like": "Je n'aime pas"
   }
 }
