@@ -1,7 +1,7 @@
 import {Group, Text, ThemeIcon, UnstyledButton} from "@mantine/core";
 import {links as data} from '../../data/navbarLinks'
 import {t} from "i18next";
-import {useLocation, useNavigate} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import {useContext} from "react";
 import UserContext from "../../context/User";
 import {isGranted} from "../../data/roles";
