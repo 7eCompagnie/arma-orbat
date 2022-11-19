@@ -29,6 +29,7 @@ const Add = () => {
 	const [errors, setErrors] = useState([]);
 	const theme = useMantineTheme();
 	const navigate = useNavigate();
+	const dark = theme.colorScheme === 'dark';
 	const chooseOperationsData = operations.map((operation, i) => ({
 		label: operation.campaign.name + ", " + operation.name,
 		value: operation.name,
@@ -159,11 +160,11 @@ const Add = () => {
 										/>
 									</Dropzone.Accept>
 									<Dropzone.Idle>
-										{ files.length > 0 ? null : <IconPhoto size={50} stroke={1.5} /> }
+										{ files.length > 0 ? null : <IconPhoto color={dark ? theme.colors.gray[4] : theme.colors.dark[9]} size={50} stroke={1.5} /> }
 									</Dropzone.Idle>
 									{ files.length > 0 ? previews :
 										<div>
-											<Text size="xl" inline>
+											<Text size="xl" color={dark ? theme.colors.gray[4] : theme.colors.dark[9]} inline>
 												Drag images here or click to select files
 											</Text>
 											<Text size="sm" color="dimmed" inline mt={7}>
