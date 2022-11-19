@@ -19,7 +19,7 @@ export const NotFound = () => {
 						{t('404.description')}
 					</Text>
 					<Group position="center">
-						<Button size="md" onClick={() => navigate('/')}>{t('404.back_to_home')}</Button>
+						<Button size="md" onClick={() => navigate(-1)}>{t('404.back')}</Button>
 					</Group>
 				</div>
 			</div>
