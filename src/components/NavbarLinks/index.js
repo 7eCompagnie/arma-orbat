@@ -8,8 +8,7 @@ import {isGranted} from "../../data/roles";
 import {withNamespaces} from "react-i18next";
 import Loading from "./Loading";
 
-function MainLink({ icon, color, label, to, permission }) {
-	const navigate = useNavigate();
+function MainLink({ icon, color, label, to, permission, onLinkClicked}) {
 	const user = useContext(UserContext);
 	const location = useLocation();
 
@@ -21,9 +20,7 @@ function MainLink({ icon, color, label, to, permission }) {
 
 	return (
 		<UnstyledButton
-			onClick={() => {
-				navigate(to)
-			}}
+			onClick={() => onLinkClicked(to)}
 			sx={(theme) => ({
 				display: 'block',
 				width: '100%',
@@ -50,8 +47,8 @@ function MainLink({ icon, color, label, to, permission }) {
 	);
 }
 
-export function NavbarLinks() {
-	const links = data.map((link) => <MainLink {...link} key={link.label} />);
+export function NavbarLinks({onLinkClicked}) {
+	const links = data.map((link) => <MainLink {...link} onLinkClicked={onLinkClicked} key={link.label} />);
 	return <div>{links}</div>;
 }
 

@@ -12,7 +12,7 @@ import {
     useMantineTheme
 } from "@mantine/core";
 import {Bell, Moon, Sun} from "tabler-icons-react";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useNavigate} from "react-router-dom";
 import {t} from "i18next";
 import {Container, Left, Logo, Right, Title} from "./style";
 import logo from '../../../assets/images/logo.webp';
@@ -29,9 +29,15 @@ import Add from "../../Gallery/Add";
 
 const Dashboard = () => {
     const theme = useMantineTheme();
+    const navigate = useNavigate();
     const [opened, setOpened] = useState(false);
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
     const dark = colorScheme === 'dark';
+
+    function handleLinkClicked (to) {
+        navigate(to)
+        setOpened(false)
+    }
 
     return (
         <AppShell
@@ -45,7 +51,7 @@ const Dashboard = () => {
             navbar={
                 <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 300 }}>
                     <Navbar.Section grow component={ScrollArea}  scrollbarSize={6} offsetScrollbars>
-                        <NavbarLinks/>
+                        <NavbarLinks onLinkClicked={handleLinkClicked} />
                         <NavbarLinksGroup/>
                     </Navbar.Section>
                     <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
