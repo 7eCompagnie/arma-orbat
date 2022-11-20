@@ -7,8 +7,8 @@ export const getImages = () => {
 	})
 }
 
-export const createImage = (data) => {
-	return postFormDataFetch(`${process.env.REACT_APP_API_ENDPOINT}/operations/244cb227-ca61-4678-bfc5-17eddca69e40/images`, data);
+export const createImage = (operationId, data) => {
+	return postFormDataFetch(`${process.env.REACT_APP_API_ENDPOINT}/operations/${operationId}/images`, data);
 }
 
 export const deleteImage = (id) => {

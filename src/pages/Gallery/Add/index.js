@@ -32,7 +32,7 @@ const Add = () => {
 	const dark = theme.colorScheme === 'dark';
 	const chooseOperationsData = operations.map((operation, i) => ({
 		label: operation.campaign.name + ", " + operation.name,
-		value: operation.name,
+		value: operation.id,
 		date: operation.date,
 		key: i
 	}))
@@ -61,7 +61,10 @@ const Add = () => {
 	);
 
 	useEffect(() => {
-		getOperations().then((data) => {
+		getOperations({
+			'sortBy': 'date',
+			'orderBy': 'desc'
+		}).then((data) => {
 			setOperations(data)
 		})
 	}, []);
@@ -87,10 +90,9 @@ const Add = () => {
 		const formData = new FormData()
 		formData.append('title', title)
 		formData.append('description', description)
-		formData.append('operation', operation)
 		formData.append('image', image)
 
-		createImage(formData).then(() => {
+		createImage(operation, formData).then(() => {
 			updateNotification({
 				id: `post-image-${title}`,
 				color: 'teal',
