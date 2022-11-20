@@ -3,6 +3,7 @@ import {createStyles} from "@mantine/core";
 export const useStyles = createStyles((theme) => ({
 	card: {
 		position: 'relative',
+		overflow: 'visible',
 		backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
 	},
 
@@ -11,6 +12,12 @@ export const useStyles = createStyles((theme) => ({
 		top: theme.spacing.xs,
 		right: theme.spacing.xs + 2,
 		pointerEvents: 'none',
+	},
+
+	trashIcon: {
+		position: 'absolute',
+		top: -theme.spacing.md,
+		left: -theme.spacing.md + 2,
 	},
 
 	title: {

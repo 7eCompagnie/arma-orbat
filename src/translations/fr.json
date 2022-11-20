@@ -17,6 +17,8 @@
   "day_left": "Jour restant",
   "here": "ici",
   "errors_detected": "Une ou plusieurs erreurs ont été détectées",
+  "cancel": "Annuler",
+  "delete": "Supprimer",
   "languages": {
     "en": "Anglais",
     "fr": "Français",
@@ -143,6 +145,37 @@
       },
       "image": {
         "label": "Image"
+      },
+      "confirm_delete": {
+        "title": "Voulez-vous vraiment supprimer l'image {{title}} ?",
+        "message": "Toutes les données liées à l'image seront supprimées (image, likes, etc...)."
+      },
+      "upload": {
+        "running": {
+          "title": "Upload de l'image en cours...",
+          "description": "Veuillez patienter... Cette opération peut prendre quelques secondes."
+        },
+        "success": {
+          "title": "Image uploadée !",
+          "description": "Vous avez correctement uploadé l'image {{title}}"
+        },
+        "error": {
+          "title": "",
+          "need_image": "Please provide an image."
+        }
+      },
+      "delete": {
+        "running": {
+          "title": "Suppression de l'image en cours...",
+          "description": "Veuillez patienter... Cette opération peut prendre quelques secondes."
+        },
+        "success": {
+          "title": "Image supprimée !",
+          "description": "Vous avez correctement supprimé l'image {{title}}"
+        },
+        "error": {
+          "title": "Une erreur est survenue !"
+        }
       }
     }
   }

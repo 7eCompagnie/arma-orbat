@@ -18,7 +18,7 @@ import {
 	Textarea,
 	useMantineTheme
 } from "@mantine/core";
-import {Check, Send} from "tabler-icons-react";
+import {AlertCircle, Check, Send} from "tabler-icons-react";
 import {createImage} from "../../../services/images";
 import {showNotification, updateNotification} from "@mantine/notifications";
 import {useNavigate} from "react-router-dom";
@@ -71,8 +71,8 @@ const Add = () => {
 		showNotification({
 			id: `post-image-${event.target.image_title.value}`,
 			loading: true,
-			title: 'Upload de l\'image en cours...',
-			message: 'Veuillez patienter... Cette opération peut prendre quelques secondes.',
+			title: t('gallery.add.upload.running.title'),
+			message: t('gallery.add.upload.running.description'),
 			autoClose: false
 		});
 
@@ -82,7 +82,7 @@ const Add = () => {
 		const image = files[0]
 
 		if (!image)
-			setErrors((old) => [...old, {message: "Please provide an image."}])
+			setErrors((old) => [...old, {message: t('gallery.add.upload.error.need_image')}])
 
 		const formData = new FormData()
 		formData.append('title', title)
@@ -90,16 +90,26 @@ const Add = () => {
 		formData.append('operation', operation)
 		formData.append('image', image)
 
-		createImage(formData).then((data) => {
+		createImage(formData).then(() => {
 			updateNotification({
 				id: `post-image-${title}`,
 				color: 'teal',
-				title: 'Image uploadée !',
-				message: `Vous avez correctement uploadé l'image ${data.title}`,
+				title: t('gallery.add.upload.success.title'),
+				message: t('gallery.add.upload.success.description', {title: title}),
 				icon: <Check/>,
 				autoClose: 5000,
 			});
 			navigate('/gallery')
+		}).catch((e) => {
+			updateNotification({
+				id: `post-image-${title}`,
+				color: 'red',
+				title: t('gallery.add.upload.error.title'),
+				message: e.message,
+				icon: <AlertCircle />,
+				autoClose: 5000,
+			});
+			console.error(e)
 		})
 	}
 

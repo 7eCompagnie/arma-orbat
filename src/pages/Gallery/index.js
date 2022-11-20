@@ -21,12 +21,20 @@ const Gallery = () => {
 		});
 	}, []);
 
+	const updateImages = () => {
+		getImages().then(data => {
+			setImages(data);
+		}).catch(error => {
+			console.error(error);
+		});
+	}
+
 	return (
 		<Container py={"2rem"}>
 			<Group position="right">
 				<Button onClick={() => navigate('/gallery/add')} mb="xl" leftIcon={<CameraPlus/>}>{t('gallery.add_image')}</Button>
 			</Group>
-			<SimpleGrid cols={2} breakpoints={[
+			<SimpleGrid cols={2} spacing="xl" breakpoints={[
 				{maxWidth: theme.breakpoints.lg, cols: 2},
 				{maxWidth: theme.breakpoints.md, cols: 1},
 				{maxWidth: theme.breakpoints.sm, cols: 2},
@@ -43,6 +51,7 @@ const Gallery = () => {
 					           date={image.createdAt}
 					           likes={image.likes}
 					           user={user}
+					           onDelete={updateImages}
 					/>
 				))}
 			</SimpleGrid>
