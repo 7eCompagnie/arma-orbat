@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6e0d8e6e-5e51-4da9-bf0a-d8397e1406e5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/next.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/pages/_app.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/pages/api/hello.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/pages/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/styles/Home.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/styles/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orbat/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/languages/english.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/languages/french.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/languages/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/languages/spanish.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/logo.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LanguagePicker/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LanguagePicker/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavbarDropdown/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavbarDropdown/style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavbarLinks/Loading.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavbarLinks/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StatCard/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StatCard/style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserBoxNavbar/Loading.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserBoxNavbar/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/User.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/languages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/navbarLinks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/roles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/userBoxLinks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/fetch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Gallery/Add/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Gallery/ImageCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Gallery/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Gallery/style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Dashboard/Content.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Dashboard/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Dashboard/style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Login/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Login/style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Visitor/Loading.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Visitor/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/Visitor/style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/NotFound/Illustation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/NotFound/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/NotFound/style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SupportUs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TopServeurs/Card.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TopServeurs/Stat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TopServeurs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TopServeurs/style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/imageLikes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/images.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/operations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/topServeurs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translations/en.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translations/es.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translations/fr.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translations/resources.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/date.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/discord.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
